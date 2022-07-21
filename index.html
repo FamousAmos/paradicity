@@ -10,6 +10,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <script>
+    function checkPassword(form) {
+      password = form.password.value;
+      confirmation = form.confirmation.value;
+
+      if (password == '')
+        alert("Please enter Password");
+
+      else if (confirmation == '')
+        alert("Please enter confirm password");
+
+      else if (password != confirmation) {
+        alert("\nPassword did not match: Please try again...")
+        return false;
+      }
+
+      else {
+        return true;
+      }
+    }
+  </script>
   <title>Paradicity</title>
 </head>
 
@@ -28,7 +49,7 @@
           to plan your next adventure! Sign up <em>now</em> to get started.</p>
         <p>You <em>know</em> you want to.</p>
       </div>
-      <form action="#" method="post">
+      <form onsubmit="checkPassword" method="post">
         <div class="contact-details">
           <h2 class="form-title">Let's do this!</h2>
           <div class="input">
@@ -45,15 +66,17 @@
           </div>
           <div class="input">
             <label for="phone">Phone Number</label>
-            <input type="tel" name="phone" id="phone">
+            <input type="tel" name="phone" id="phone" min-length="10" max-length="10">
           </div>
           <div class="input">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required=""
+              pattern="/(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z0-9~]{8,}/">
           </div>
-          <div class="input">
+          <div class=" input">
             <label for="confirmation">Confirm Password</label>
-            <input type="password" name="confirmation" id="confirmation">
+            <input type="password" name="confirmation" id="confirmation" required=""
+              pattern="/(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z0-9~]{8,}/">
           </div>
         </div>
         <div class="button">

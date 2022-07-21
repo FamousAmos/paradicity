@@ -1,5 +1,5 @@
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
 }
 
 h1 {
@@ -16,7 +16,12 @@ input {
 
 input:focus {
   border: 3px solid rgb(73, 172, 211);
+  box-shadow: 3px 3px 5px black;
   outline: none;
+}
+
+input:invalid:focus {
+  border: 3px solid red;
 }
 
 button {
